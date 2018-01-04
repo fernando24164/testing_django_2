@@ -1,0 +1,22 @@
+{
+  "name": "django_maps",
+  "version": "1.0.0",
+  "main": "",
+  "scripts": {
+    "test": "node_modules/.bin/karma start"
+  },
+  "author": "fernando24164",
+  "dependencies": {
+    "font-awesome": "^4.7.0"
+  },
+  "description": "",
+  "devDependencies": {
+    "karma": "^2.0.0",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-qunit": "^1.2.1",
+    "karma-sinon": "^1.0.5",
+    "qunit": "^2.4.1",
+    "qunitjs": "^2.4.1",
+    "sinon": "^4.1.3"
+  }
+}

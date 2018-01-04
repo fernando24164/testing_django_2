@@ -1,0 +1,17 @@
+{% extends "index/main.html" %}
+
+{% block header %}
+    {% include "map/header.html" %}
+{% endblock %}
+
+{% block data_block%}
+    <div id="main-div" class="container-fluid">
+            <h1>Map:</h1>
+            <h4>Archaeological places</h4>
+            <div id="mapid"></div>
+        </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "map/footer.html" %}
+{% endblock %}
