@@ -2,7 +2,7 @@ QUnit.module("test", {
     before: function () {
         this.server = sinon.createFakeServer();
         var testData = {name: 'cancho roano', latitude: '43.1', longitude: '-3.1'};
-        this.server.respondWith("GET", "http://192.168.33.10:8080/api/places",
+        this.server.respondWith("GET", "/api/places",
                                 [200, {"Content-Type": "application/json"},
                                 JSON.stringify(testData)]);
     },

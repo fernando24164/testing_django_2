@@ -19,7 +19,7 @@ var maps = (function ($) {
 
         setIcon: function () {
             that.greenIcon = L.icon({
-                iconUrl: 'http://192.168.33.10:8080/static/image/bluemapicon2.png',
+                iconUrl: '/static/image/bluemapicon2.png',
                 iconSize: [25, 42],
                 iconAnchor: [22, 42],
                 popupAnchor: [-5, -45]
@@ -27,7 +27,7 @@ var maps = (function ($) {
         },
 
         getData: function () {
-            this.places_data = $.get("http://192.168.33.10:8080/api/places").promise();
+            this.places_data = $.get("/api/places").promise();
         },
 
         drawMarks: function () {
