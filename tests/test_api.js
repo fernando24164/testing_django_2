@@ -18,7 +18,7 @@ QUnit.test("sinon example test", function (assert) {
     assert.equal(this.server.responses[0].response[0], 200);
 });
 
-QUnit.test("sinon mock leafleft object", function (assert) {
+QUnit.test("sinon mock jQuery object", function (assert) {
     var jQuery = {get: function () {
             console.log("it is a testing function");
         }};
