@@ -20,7 +20,7 @@ QUnit.test("sinon example test", function (assert) {
 
 QUnit.test("sinon mock leafleft object", function (assert) {
     var jQuery = {get: function () {
-            console.log("hola mundo");
+            console.log("it is a testing function");
         }};
     var mock = sinon.mock(jQuery).expects("get").atLeast(1);
     jQuery.get("testing");
