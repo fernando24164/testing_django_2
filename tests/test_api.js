@@ -18,3 +18,12 @@ QUnit.test("sinon example test", function (assert) {
     assert.equal(this.server.responses[0].response[0], 200);
 });
 
+QUnit.test("sinon mock leafleft object", function (assert) {
+    var jQuery = {get: function () {
+            console.log("hola mundo");
+        }};
+    var mock = sinon.mock(jQuery).expects("get").atLeast(1);
+    jQuery.get("testing");
+    assert.equal(mock.called, true);
+    mock.verify();
+});
