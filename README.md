@@ -1,5 +1,5 @@
 # Testing django
-Proof of concept testing front an back in Django v2
+Proof of concept testing front and back in Django v2
 
 To execute it you will need Vagrant in your system all that projects needs
 it is in bootstrap file.
