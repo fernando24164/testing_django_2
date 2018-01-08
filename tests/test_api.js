@@ -27,3 +27,15 @@ QUnit.test("sinon mock jQuery object", function (assert) {
     assert.equal(mock.called, true);
     mock.verify();
 });
+
+QUnit.test("fake get method response", function (assert) {
+    var jQuery = {get: function () {
+            console.log("it is a testing function");
+        }};
+    sinon.stub(jQuery, "get").yieldsTo("success", {'name': 'test', 'longitude': 1, 'latitude': 1});
+    jQuery.get({
+        success: function (data) {
+            assert.equal(data['name'], 'test');
+        }
+    });
+});
