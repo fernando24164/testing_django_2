@@ -35,7 +35,7 @@ QUnit.test("fake get method response", function (assert) {
     sinon.stub(jQuery, "get").yieldsTo("success", {'name': 'test', 'longitude': 1, 'latitude': 1});
     jQuery.get({
         success: function (data) {
-            assert.equal(data['name'], 'test');
+            assert.deepEqual(data, {'name': 'test', 'longitude': 1, 'latitude': 1});
         }
     });
 });
