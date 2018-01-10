@@ -28,7 +28,7 @@ QUnit.test("sinon mock jQuery object", function (assert) {
     mock.verify();
 });
 
-QUnit.test("fake get method response", function (assert) {
+QUnit.test("fake get ajax method response", function (assert) {
     var jQuery = {get: function () {
             console.log("it is a testing function");
         }};
@@ -38,4 +38,11 @@ QUnit.test("fake get method response", function (assert) {
             assert.deepEqual(data, {'name': 'test', 'longitude': 1, 'latitude': 1});
         }
     });
+});
+
+QUnit.test("test qunit fixtures", function (assert) {
+    var $fixture = $('#qunit-fixture');
+    $fixture.append('<div id="mapid"></div>');
+    maps.createMap();
+    assert.equal(maps.map._loaded, true);
 });
