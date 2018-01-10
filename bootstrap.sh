@@ -1,20 +1,21 @@
 #!/bin/bash
 
-apt-get update
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get -y install curl
 
 cd /tmp
 curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
+sudo apt-get install -y nodejs
 
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password test'
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password test'
-apt-get install -y build-essential python3-dev python3-pip mysql-server libmysqlclient-dev vim nodejs
-
-ln -s $(which nodejs) /usr/bin/node
+sudo apt-get install -y build-essential python3-dev python3-pip mysql-server libmysqlclient-dev vim
 
 #Dependencies to build python 3.6
-apt-get install -y libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev libsqlite3-dev
-apt-get install -y libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev tk-dev
+sudo apt-get install -y libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev libsqlite3-dev
+sudo apt-get install -y libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev tk-dev
 
 #install python 3.6
 wget https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tar.xz
