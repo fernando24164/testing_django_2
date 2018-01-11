@@ -9,9 +9,16 @@ curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
 sudo apt-get install -y nodejs
 
+#Install firefox
+sudo echo "deb http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu trusty main" >> /etc/apt/sources.list
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7EBC211F
+sudo apt-get update
+sudo apt-get install -y firefox
+
+#Installing useful tools
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password test'
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password test'
-sudo apt-get install -y build-essential python3-dev python3-pip mysql-server libmysqlclient-dev vim
+sudo apt-get install -y build-essential python3-dev python3-pip mysql-server libmysqlclient-dev vim xvfb
 
 #Dependencies to build python 3.6
 sudo apt-get install -y libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev libsqlite3-dev
