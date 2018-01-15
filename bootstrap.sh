@@ -2,7 +2,7 @@
 
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get -y install curl
+sudo apt-get install -y curl
 
 cd /tmp
 curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
@@ -18,7 +18,20 @@ sudo apt-get install -y firefox
 #Installing useful tools
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password test'
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password test'
-sudo apt-get install -y build-essential python3-dev python3-pip mysql-server libmysqlclient-dev vim xvfb
+sudo apt-get install -y build-essential python3-dev python3-pip mysql-server libmysqlclient-dev vim xvfb git
+
+#Install Go 1.9.2
+cd /tmp
+wget https://dl.google.com/go/go1.9.2.linux-amd64.tar.gz
+tar xvf go1.9.2.linux-amd64.tar.gz
+sudo chown -R root:root ./go
+sudo mv go /usr/local
+sudo echo "export GOPATH=$HOME/work" >> ~/.bashrc
+sudo echo "export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin" >> ~/.bashrc
+sudo su -c "source ~/.bashrc"
+echo "export GOPATH=$HOME/work" >> ~/.bashrc
+echo "export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin" >> ~/.bashrc
+source ~/.bashrc
 
 #Dependencies to build python 3.6
 sudo apt-get install -y libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev libsqlite3-dev
